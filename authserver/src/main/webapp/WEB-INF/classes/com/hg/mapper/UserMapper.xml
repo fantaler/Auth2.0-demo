@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.qhy.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.qhy.domain.User" >
+    <id column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="uname" property="uname" jdbcType="VARCHAR" />
+    <result column="upassword" property="upassword" jdbcType="VARCHAR" />
+    <result column="uemail" property="uemail" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    `uid`, uname, upassword, uemail
+  </sql>
+  <insert id="insertSelective" parameterType="com.qhy.domain.User" useGeneratedKeys="true" keyProperty="uid" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      uname,
+      upassword,
+      uemail,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{uname,jdbcType=VARCHAR},
+      #{upassword,jdbcType=VARCHAR},
+      #{uemail,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qhy.domain.User" >
+    update user
+    <set >
+      <if test="uname != null" >
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="upassword != null" >
+        upassword = #{upassword,jdbcType=VARCHAR},
+      </if>
+      <if test="uemail != null" >
+        uemail = #{uemail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where `uid` = #{uid,jdbcType=INTEGER}
+  </update>
+</mapper>

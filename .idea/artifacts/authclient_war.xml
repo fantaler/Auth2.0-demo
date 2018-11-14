@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="authclient:war">
+    <output-path>$PROJECT_DIR$/authclient/target</output-path>
+    <root id="archive" name="authclient-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="authclient:war exploded" />
+    </root>
+  </artifact>
+</component>

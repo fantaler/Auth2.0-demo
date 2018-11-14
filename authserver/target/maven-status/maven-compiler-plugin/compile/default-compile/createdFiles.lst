@@ -1,0 +1,8 @@
+com\qhy\controller\UserInfoController.class
+com\qhy\controller\IndexController.class
+com\qhy\controller\UserController.class
+com\qhy\MainApplication.class
+com\qhy\domain\User.class
+com\qhy\dao\UserMapper.class
+com\qhy\controller\AuthorizeController.class
+com\qhy\controller\AccessTokenController.class
